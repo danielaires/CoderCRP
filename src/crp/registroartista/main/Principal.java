@@ -26,5 +26,5 @@ public class Principal {
 		
 		System.out.println(artista.toString());
 	}
-
+//5522
 }

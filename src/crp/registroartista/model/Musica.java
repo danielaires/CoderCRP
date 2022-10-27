@@ -1,6 +1,7 @@
 package crp.registroartista.model;
 
 import java.sql.Time;
+import java.util.List;
 
 public class Musica {
 
@@ -8,13 +9,13 @@ public class Musica {
 	private String nome;
 	private Time duracao;
 	private Genero genero;
-	private Artista artista;
+	private List<Artista> artista;
 
 	public Musica() {
 
 	}
-
-	public Musica(Integer id, String nome, Time duracao, Genero genero, Artista artista) {
+	
+	public Musica(Integer id, String nome, Time duracao, Genero genero, List<Artista> artista) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -22,6 +23,7 @@ public class Musica {
 		this.genero = genero;
 		this.artista = artista;
 	}
+
 
 	public Integer getId() {
 		return id;
@@ -55,11 +57,11 @@ public class Musica {
 		this.genero = genero;
 	}
 
-	public Artista getArtista() {
+	public List<Artista> getArtista() {
 		return artista;
 	}
 
-	public void setArtista(Artista artista) {
+	public void setArtista(List<Artista> artista) {
 		this.artista = artista;
 	}
 
@@ -69,4 +71,6 @@ public class Musica {
 				+ artista + "]";
 	}
 
+	
+	
 }
