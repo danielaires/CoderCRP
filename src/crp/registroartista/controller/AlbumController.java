@@ -31,6 +31,9 @@ public class AlbumController {
 	public boolean update(Album a) {
 		int index = this.listAlbum.indexOf(a);
 		if (index > 0) {
+			if(this.listAlbum.contains(a)) {//se ja contem o obj ele insere novamente
+				return true;
+			}
 			this.listAlbum.add(index, a);
 			return true;
 		}
