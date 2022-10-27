@@ -40,13 +40,13 @@ public class AlbumController {
 		return false;
 	}
 
-	public Album select(Album a) {
-		return this.listAlbum.get(this.listAlbum.indexOf(a));
+	public String select(int id) {
+		return this.listAlbum.get(id).toString();
 	}
 
 	public boolean delete(Album a) {
 		int index = this.listAlbum.indexOf(a);
-		if (index > 0)
+		if (index >= 0)
 			this.listAlbum.remove(index);
 		return true;
 	}
