@@ -94,6 +94,8 @@ public class TesteDeCadastroArtista {
 
 		System.out.println("Endereço URL da capa : ");
 		a.setCapa(ler.next());
+		
+		
 
 		return a;
 	}
