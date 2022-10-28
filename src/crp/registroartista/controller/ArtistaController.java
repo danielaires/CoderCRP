@@ -11,10 +11,13 @@ public class ArtistaController {
 	List<Artista> lista = new ArrayList();
 	
 	
-	public void buscarPorId(Integer id) {
+	public void buscarPorNome(String nome) {
 		
-		System.out.println(lista.get(id).toString());
-		
+		lista.forEach(a -> {
+		    if(a.getNome().equals(nome)) {
+		        a.toString();
+		    }
+		});
 	}
 	
 	public void adicionarArtista(Artista artista) {
