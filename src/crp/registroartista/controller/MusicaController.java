@@ -1,9 +1,9 @@
 package crp.registroartista.controller;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
+import crp.registroartista.comparator.MusicaComparator;
 import crp.registroartista.model.Artista;
 import crp.registroartista.model.Genero;
 import crp.registroartista.model.Musica;
@@ -62,6 +62,10 @@ public class MusicaController {
         });
     }
 
+    public void filterByName(){
+        this.listMusica.sort(new MusicaComparator());
+    }
+
     public List<Musica> getListMusica() {
         return listMusica;
     }
@@ -92,6 +96,15 @@ public class MusicaController {
        mc.read();
        System.out.println("====Teste de DELETE====");
        mc.delete(musica1);
+       mc.read();
+       System.out.println("====Teste de ORDENAÇÃO====");
+       System.out.println("====INSERINDO NOVAMENTE NA LISTA====");
+       mc.insert(musica1); 
+       mc.insert(musica3); 
+       mc.insert(musica2); 
+       mc.read();
+       System.out.println("==========RESULTADO========");
+       mc.filterByName();
        mc.read();
     }
 }
